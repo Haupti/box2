@@ -9,14 +9,14 @@ services:
     networks:
       - forRestCalls
     ports:
-      - 8080:8080
+      - 5000:5000
 
   frontend:
     build: ./box-moving-frontend
     networks:
       - forRestCalls
     ports:
-      - 8081:8081
+      - 5005:5005
 
 networks:
   forRestCalls:
