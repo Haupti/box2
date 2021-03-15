@@ -48,7 +48,7 @@ export default class MessageCreator extends Vue {
   }
 
   async request() {
-    await axios("http://localhost:8080/REST", {headers: {'Access-Control-Allow-Origin': '*',}})
+    await axios("http://0.0.0.0:5006/REST", {headers: {'Access-Control-Allow-Origin': '*',}})
         .then((response: AxiosResponse) => {
           console.log(response.data);
           this.$emit("requestMessage", response.data);
