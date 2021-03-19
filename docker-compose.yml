@@ -5,7 +5,7 @@ services:
   backend:
     build: .
     volumes:
-      - variousShit:/backendVol
+      - testDrive:/backendVol
     networks:
       - forRestCalls
     ports:
@@ -18,8 +18,17 @@ services:
     ports:
       - 5005:5005
 
+  db:
+    image: mysql:8
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - database
+
 networks:
   forRestCalls:
+  database:
 
 volumes:
-  variousShit:
+  testDrive:
+  data:

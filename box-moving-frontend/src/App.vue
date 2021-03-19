@@ -1,12 +1,19 @@
 <template>
-  <div
+  <div id="app"
       @keypress.up="boxUp"
       @keypress.down="boxDown"
       @keypress.left="boxLeft"
       @keypress.right="boxRight">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <Display name="HTMLCanvas" v-bind:warningMsg="warning" v-bind:x="x" v-bind:y="y" />
-    <MessageCreator name="MessageCreator" @warningMessage="setWarning" @requestMessage="alertMessage" />
+    <div class="cols">
+      <div class="colFirst">
+        <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+        <Display name="HTMLCanvas" v-bind:warningMsg="warning" v-bind:x="x" v-bind:y="y" />
+        <MessageCreator name="MessageCreator" @warningMessage="setWarning" @requestMessage="alertMessage" />
+      </div>
+      <div class="colSecond">
+        <RestTester />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,12 +22,14 @@ import {Options, Vue} from 'vue-class-component';
 import HelloWorld from './components/HelloWorld.vue';
 import Display from './components/Display.vue';
 import MessageCreator from "@/components/MessageCreator.vue";
+import RestTester from "@/components/RestTester.vue";
 
 @Options({
   components: {
     HelloWorld,
     Display,
     MessageCreator,
+    RestTester,
   },
 })
 
@@ -81,5 +90,9 @@ export default class App extends Vue {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.cols {
+  display: flex;
 }
 </style>
