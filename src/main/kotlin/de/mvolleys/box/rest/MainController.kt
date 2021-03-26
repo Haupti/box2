@@ -1,14 +1,14 @@
 package de.mvolleys.box.rest
 
 import de.mvolleys.box.db.model.QuoteEntity
-import de.mvolleys.box.db.repositories.QuoteRepository
+import de.mvolleys.box.db.repo.jpa.QuoteJpaRepository
 import org.springframework.http.ResponseEntity
 import de.mvolleys.box.persistency.increaseAndGetPersistentCounter
 import org.springframework.web.bind.annotation.*
 
-@CrossOrigin(originPatterns = ["http://*:*"])
+@CrossOrigin(originPatterns = ["http://localhost:*"])
 @RestController
-class MainController(val quoteRepository: QuoteRepository) {
+class MainController(val quoteJpaRepository: QuoteJpaRepository) {
 
     @GetMapping("/REST")
     fun restInfo(): ResponseEntity<String> {
@@ -23,12 +23,12 @@ class MainController(val quoteRepository: QuoteRepository) {
 
     @GetMapping("/quotes")
     fun getAllQuotes() : List<QuoteEntity> {
-        return quoteRepository.findAll().toList()
+        return quoteJpaRepository.findAll().toList()
     }
 
     @PostMapping("/quotes")
     fun addQuote(@RequestBody quote: QuoteEntity) {
-        quoteRepository.save(quote)
+        quoteJpaRepository.save(quote)
     }
 }
 

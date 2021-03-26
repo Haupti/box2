@@ -1,7 +1,8 @@
 
 <template>
   <div>
-    <label for="warningMessageInput"></label><input
+    <label for="warningMessageInput"></label>
+    <input
       id="warningMessageInput"
       @keypress.enter="showMessage"
     />

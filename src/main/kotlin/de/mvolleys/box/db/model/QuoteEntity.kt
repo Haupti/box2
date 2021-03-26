@@ -6,4 +6,5 @@ import javax.persistence.*
 class QuoteEntity(
     @Column(nullable = false) var author: String,
     @Column(nullable = false) var quote: String,
-    @Id @GeneratedValue var id: Long)
+    @Id @GeneratedValue var id: Long){
+}

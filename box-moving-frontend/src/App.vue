@@ -12,6 +12,7 @@
       </div>
       <div class="colSecond">
         <RestTester />
+        <QuoteAdder />
       </div>
     </div>
   </div>
@@ -23,6 +24,7 @@ import HelloWorld from './components/HelloWorld.vue';
 import Display from './components/Display.vue';
 import MessageCreator from "@/components/MessageCreator.vue";
 import RestTester from "@/components/RestTester.vue";
+import QuoteAdder from "@/components/QuoteAdder.vue";
 
 @Options({
   components: {
@@ -30,6 +32,7 @@ import RestTester from "@/components/RestTester.vue";
     Display,
     MessageCreator,
     RestTester,
+    QuoteAdder,
   },
 })
 

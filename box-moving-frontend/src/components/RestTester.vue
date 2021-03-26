@@ -27,7 +27,7 @@ export default class RestTester extends Vue {
   }
 
   async request() {
-    await axios("http://0.0.0.0:5006/persistenz", {headers: {'Access-Control-Allow-Origin': '*',}})
+    await axios("http://0.0.0.0:5006/counter", {headers: {'Access-Control-Allow-Origin': '*',}})
         .then((response: AxiosResponse) => {
           this.requestData = response.data;
           (document.getElementById("dataDisplay") as HTMLElement).textContent =
